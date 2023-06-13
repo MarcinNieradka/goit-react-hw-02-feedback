@@ -1,16 +1,12 @@
-export const App = () => {
+import './App.css';
+import Feedback from './Feedback/Feedback';
+
+function App() {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-      }}
-    >
-      React feedback
+    <div>
+      <Feedback />
     </div>
   );
-};
+}
+
+export default App;
