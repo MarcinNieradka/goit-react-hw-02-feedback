@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { FeedbackOptions, Statistics } from 'components';
 
 const Notification = ({ message }) => {
   return <>{message}</>;
@@ -6,42 +7,6 @@ const Notification = ({ message }) => {
 
 const Section = ({ children }) => {
   return <>{children}</>;
-};
-
-const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
-  return (
-    <>
-      <h2>Statistics</h2>
-      <span>Good: {good}</span>
-      <br />
-      <span>Neutral: {neutral}</span>
-      <br />
-      <span>Bad: {bad}</span>
-      <br />
-      <span>Total: {total}</span>
-      <br />
-      <span>Positive feedback: {positivePercentage} %</span>
-    </>
-  );
-};
-
-const FeedbackOptions = ({ options, onLeaveFeedback }) => {
-  // console.log(options);
-  return (
-    <>
-      {options.map((item, index) => {
-        return (
-          <button
-            key={index}
-            type="button"
-            onClick={() => onLeaveFeedback(item)}
-          >
-            {item}
-          </button>
-        );
-      })}
-    </>
-  );
 };
 
 class Feedback extends Component {
@@ -61,13 +26,7 @@ class Feedback extends Component {
   countTotalFeedback = e =>
     (this.total = this.state.good + this.state.neutral + this.state.bad);
 
-  // countPositiveFeedbackPercentage = e =>
-  //   (this.positivePercentage = Math.floor(
-  //     100 / (this.total / this.state.good)
-  //   ));
-
   countPositiveFeedbackPercentage = () =>
-    // const totalFeedback = this.countTotalFeedback();
     Math.floor((this.state.good / this.total) * 100);
 
   handleChange = e => {
