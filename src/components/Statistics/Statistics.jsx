@@ -1,4 +1,6 @@
+import clsx from 'clsx';
 import React from 'react';
+import './Statistics.css';
 
 export const Statistics = ({
   good,
@@ -8,17 +10,17 @@ export const Statistics = ({
   positivePercentage,
 }) => {
   return (
-    <>
+    <div className={clsx('statistics')}>
       <h2>Statistics</h2>
       <span>Good: {good}</span>
-      <br />
+
       <span>Neutral: {neutral}</span>
-      <br />
+
       <span>Bad: {bad}</span>
-      <br />
+
       <span>Total: {total}</span>
-      <br />
+
       <span>Positive feedback: {positivePercentage} %</span>
-    </>
+    </div>
   );
 };

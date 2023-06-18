@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { FeedbackOptions, Statistics } from 'components';
+import './Feedback.css';
+import clsx from 'clsx';
 
 const Notification = ({ message }) => {
   return <>{message}</>;
 };
 
 const Section = ({ children }) => {
-  return <>{children}</>;
+  return <div className={clsx('wrapper')}>{children}</div>;
 };
 
 class Feedback extends Component {
