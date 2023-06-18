@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { FeedbackOptions, Statistics } from 'components';
 import './Feedback.css';
 import clsx from 'clsx';
+import PropTypes from 'prop-types';
 
 const Notification = ({ message }) => {
   return <>{message}</>;
@@ -17,6 +18,13 @@ class Feedback extends Component {
     initialValue: 0,
     total: 0,
     positivePercentage: 0,
+  };
+
+  static propTypes = {
+    step: PropTypes.number,
+    initialValue: PropTypes.number,
+    total: PropTypes.number,
+    positivePercentage: PropTypes.number,
   };
 
   state = {

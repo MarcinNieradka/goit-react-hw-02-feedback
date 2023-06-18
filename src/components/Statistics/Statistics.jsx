@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import React from 'react';
 import './Statistics.css';
+import PropTypes from 'prop-types';
 
 export const Statistics = ({
   good,
@@ -23,4 +24,12 @@ export const Statistics = ({
       <span>Positive feedback: {positivePercentage} %</span>
     </div>
   );
+};
+
+Statistics.propTypes = {
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
 };
